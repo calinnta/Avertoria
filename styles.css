@@ -4323,33 +4323,49 @@ td:last-child {
 /* ------------------------------------------------------------------- 
  * ## copyright
  * ------------------------------------------------------------------- */
-.ss-copyright {
-	margin: 0 var(--vspace-2) 0 0;
+ .ss-copyright {
+    margin: 0 var(--vspace-2) 0 0;
+    display: flex; /* Ensure elements are in a row */
+    align-items: center; /* Align vertically in the center */
+    flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
+}
+
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 600px) {
+    .ss-copyright {
+        justify-content: flex-start; /* Align to the left */
+    }
+
+    .ss-copyright span {
+        margin-right: 5px; /* Add space between elements */
+    }
 }
 
 .ss-copyright a {
-	color: var(--color-gray-5);
+    color: var(--color-gray-5);
 }
 
 .ss-copyright a:focus,
 .ss-copyright a:hover {
-	color: var(--color-1);
+    color: var(--color-1);
 }
 
 .ss-copyright span {
-	display: inline-block;
+    display: inline-block;
+    white-space: nowrap; /* Prevent line breaks between spans */
 }
 
 .ss-copyright span::after {
-	content: "|";
-	display: inline-block;
-	padding: 0 0.8rem 0 1rem;
-	color  : rgba(255, 255, 255, 0.05);
+    content: "|";
+    display: inline-block;
+    padding: 0 0.8rem 0 1rem;
+    color: rgba(255, 255, 255, 0.05);
 }
 
 .ss-copyright span:last-child::after {
-	display: none;
+    display: none;
 }
+
 
 /* ------------------------------------------------------------------- 
  * ## go top
